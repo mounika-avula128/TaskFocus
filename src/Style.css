@@ -1,0 +1,252 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #f3e8ff);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+  color: #1f2937;
+}
+
+/* ---------- MAIN APP CONTAINER ---------- */
+.App {
+  width: 100%;
+  max-width: 760px;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  padding: 36px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.App:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(31, 38, 135, 0.2);
+}
+
+/* ---------- HEADER ---------- */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 34px;
+  font-weight: 600;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+}
+
+header p {
+  color: #475569;
+  font-size: 15px;
+}
+
+/* ---------- FORM ---------- */
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+#inp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 10px 14px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+#inp input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  color: #111827;
+}
+
+#inp button {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#inp button:hover {
+  background: linear-gradient(135deg, #2563eb, #0ea5e9);
+  transform: scale(1.05);
+}
+
+/* ---------- SELECT DROPDOWNS ---------- */
+#btns {
+  display: flex;
+  gap: 10px;
+}
+
+#btns select {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#btns select:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+/* ---------- TASK LIST ---------- */
+.task-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  padding: 14px 18px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+}
+
+.task-list li:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+.task-list span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.task-list small {
+  font-size: 13px;
+  color: #64748b;
+}
+
+.task-list button {
+  background: none;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.task-list button:first-child {
+  color: #059669;
+}
+
+.task-list button:first-child:hover {
+  background: rgba(16, 185, 129, 0.1);
+}
+
+.task-list button:last-child {
+  color: #dc2626;
+}
+
+.task-list button:last-child:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* ---------- PROGRESS BAR ---------- */
+.progress-tracker {
+  margin-top: 28px;
+}
+
+.progress-tracker p {
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #10b981);
+  transition: width 0.4s ease;
+}
+
+/* ---------- CLEAR BUTTON ---------- */
+.clear-btn {
+  margin-top: 24px;
+  background: linear-gradient(135deg, #f87171, #ef4444);
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 10px;
+  font-weight: 500;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.clear-btn:hover {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  transform: scale(1.03);
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .App {
+    padding: 24px;
+  }
+
+  #btns {
+    flex-direction: column;
+  }
+
+  #inp {
+    flex-direction: column;
+  }
+
+  #inp button {
+    width: 100%;
+  }
+}
